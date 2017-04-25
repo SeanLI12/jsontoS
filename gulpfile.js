@@ -5,10 +5,10 @@ var gulp = require('gulp'),
     targetname="lp_theader",
     watch = require('gulp-watch'),
     assemblenamejson="json/component/"+targetname+".json",
-    assemblenamescss="../Scss/"+partnername+"/Theme_Color_Setting/_"+targetname+".scss",
-    assemblepartnerfolder="../Theme/"+partnername+"/Css",
+    assemblenamescss="../Scss/"+partnername+"/Theme_Color_Setting/comp/"+targetname+".scss",
+    assemblepartnerfolder="../Theme/"+partnername+"/Css/comp",
+    tgScss="../Scss/Theme/"+partnername+"/Css/comp/*.scss",
     jf = require('jsonfile'),
-    tgScss="../Scss/Theme/"+partnername+"/Css/*.scss",
     connection,
     fs = require('fs'),
     gulpCompass    = require('gulp-compass');
@@ -42,9 +42,9 @@ webSocketServer.on('request', function(request) {
             partnername=recobj.themeID;
             targetname=recobj.compID;
             assemblenamejson="json/component/"+targetname+".json";
-            assemblenamescss="../Scss/"+partnername+"/Theme_Color_Setting/_"+targetname+".scss";
-            assemblepartnerfolder="../Theme/"+partnername+"/Css";
-            tgScss="../Scss/Theme/"+partnername+"/Css/*.scss";
+            assemblenamescss="../Scss/"+partnername+"/Theme_Color_Setting/comp/"+targetname+".scss",
+            assemblepartnerfolder="../Theme/"+partnername+"/Css/comp",
+            tgScss="../Scss/Theme/"+partnername+"/Css/comp/*.scss",
             jf.readFile(getjsonpath, function(err, obj) {
              
               connection.send(JSON.stringify(obj));
@@ -56,9 +56,9 @@ webSocketServer.on('request', function(request) {
               partnername=recobj.themeID;
               targetname=recobj.compID;
               assemblenamejson="json/component/"+targetname+".json";
-              assemblenamescss="../Scss/"+partnername+"/Theme_Color_Setting/_"+targetname+".scss";
-              assemblepartnerfolder="../Theme/"+partnername+"/Css";
-              tgScss="../Scss/Theme/"+partnername+"/Css/*.scss";
+              assemblenamescss="../Scss/"+partnername+"/Theme_Color_Setting/comp/"+targetname+".scss",
+              assemblepartnerfolder="../Theme/"+partnername+"/Css/comp",
+              tgScss="../Scss/Theme/"+partnername+"/Css/comp/*.scss",
               fs.writeFile(getjsonpath, JSON.stringify(recobj.obj), function(err) {
                   if (err) 
                     throw 'error writing file: ' + err;
