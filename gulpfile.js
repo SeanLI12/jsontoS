@@ -46,7 +46,7 @@ webSocketServer.on('request', function(request) {
             assemblepartnerfolder="../Theme/"+partnername+"/Css/comp",
             tgScss="../Scss/Theme/"+partnername+"/Css/comp/*.scss",
             jf.readFile(getjsonpath, function(err, obj) {
-             
+              console.log(obj);
               connection.send(JSON.stringify(obj));
             });
           
